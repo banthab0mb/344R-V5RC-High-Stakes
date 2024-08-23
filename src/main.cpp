@@ -16,14 +16,14 @@ using namespace vex;
 controller Controller1 = controller(primary);
 
 // A collection of settings for a speed controller
-sylib::SpeedControllerInfo motor_speed_controller(
+sylib::SpeedControllerInfo drivetrain_motor_controller(
     [](double rpm)
     { return 5; }, // kV function
     1,             // kP
     1,             // kI
     1,             // kD
     1,             // kH
-    false,         // anti-windup enabled
+    true,         // anti-windup enabled
     0,             // anti-windup range
     false,         // p controller bounds threshold enabled
     0,             // p controller bounds cutoff enabled
@@ -31,12 +31,12 @@ sylib::SpeedControllerInfo motor_speed_controller(
     0              // range to target to apply max voltage
 );
 
-auto FrontLeftMotor = sylib::Motor(1, 600, true, motor_speed_controller);
-auto BackLeftMotor = sylib::Motor(2, 600, true, motor_speed_controller);
-auto MiddleLeftMotor = sylib::Motor(3, 600, false, motor_speed_controller);
-auto FrontRightMotor = sylib::Motor(4, 600, false, motor_speed_controller);
-auto BackRightMotor = sylib::Motor(5, 600, false, motor_speed_controller);
-auto MiddleRightMotor = sylib::Motor(6, 600, true, motor_speed_controller);
+auto FrontLeftMotor = sylib::Motor(1, 600, true, drivetrain_motor_controller);
+auto BackLeftMotor = sylib::Motor(2, 600, true, drivetrain_motor_controller);
+auto MiddleLeftMotor = sylib::Motor(3, 600, false, drivetrain_motor_controller);
+auto FrontRightMotor = sylib::Motor(4, 600, false, drivetrain_motor_controller);
+auto BackRightMotor = sylib::Motor(5, 600, false, drivetrain_motor_controller);
+auto MiddleRightMotor = sylib::Motor(6, 600, true, drivetrain_motor_controller);
 
 
 // A global instance of competition
@@ -83,6 +83,22 @@ void autonomous(void)
 void usercontrol(void)
 {
   
+  // Set the motors to spin at 150 RPM for 5 seconds using the 
+  // custom speed controller
+  FrontLeftMotor.set_velocity_custom_controller(150); 
+  BackLeftMotor.set_velocity_custom_controller(150);
+  MiddleLeftMotor.set_velocity_custom_controller(150);
+  FrontRightMotor.set_velocity_custom_controller(150);
+  BackRightMotor.set_velocity_custom_controller(150);
+  MiddleRightMotor.set_velocity_custom_controller(150);
+  sylib::delay(5000);
+  FrontLeftMotor.stop();
+  BackLeftMotor.stop();
+  MiddleLeftMotor.stop();
+  FrontRightMotor.stop();
+  BackRightMotor.stop();
+  MiddleRightMotor.stop();
+
 
   // User control code here, inside the loop
   while (1)
