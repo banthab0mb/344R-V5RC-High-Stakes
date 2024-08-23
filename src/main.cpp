@@ -12,10 +12,10 @@
 
 using namespace vex;
 
-// initialize a controller
+// Driver's controller initalization
 controller Controller1 = controller(primary);
 
-// A collection of settings for a speed controller
+// Motor controller for the drivetrain
 sylib::SpeedControllerInfo drivetrain_motor_controller(
     [](double rpm)
     { return 5; }, // kV function
@@ -82,7 +82,8 @@ void autonomous(void)
 
 void usercontrol(void)
 {
-  
+  sylib::delay(2000); // Wait for 2 seconds before starting the drivetrain motors
+
   // Set the motors to spin at 150 RPM for 5 seconds using the 
   // custom speed controller
   FrontLeftMotor.set_velocity_custom_controller(150); 
