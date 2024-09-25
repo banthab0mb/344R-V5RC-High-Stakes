@@ -15,6 +15,14 @@
 
 using namespace vex;
 
+/*
+TODO:
+Auton Selctor?
+Driver control file
+Test driving
+Create auton
+Get LEDS and set them up
+*/
 
 
 // A global instance of competition
@@ -29,16 +37,6 @@ competition Competition;
 void pre_auton(void)
 {
   sylib::initialize(); // initialize the library
-
-  // Create an addrled object
-  auto addrled = sylib::Addrled(1, 1, 64);
-
-  // Set the LED strip to a gradient in HSV color space
-  // that displays a full range of hues
-  addrled.gradient(0xFF0000, 0xFF0005, 0, 0, false, true);
-
-  // Cycle the colors at speed 10
-  addrled.cycle(*addrled, 10);
 
   // Pre Auton file is called:
 
