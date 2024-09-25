@@ -26,8 +26,8 @@ sylib::SpeedControllerInfo drivetrain_motor_controller(
 );
 
 sylib::Motor FrontLeftMotor(1, 600, true, drivetrain_motor_controller);
-// auto BackLeftMotor = sylib::Motor(2, 600, true, drivetrain_motor_controller);
-// auto MiddleLeftMotor = sylib::Motor(3, 600, false, drivetrain_motor_controller);
-// auto FrontRightMotor = sylib::Motor(4, 600, false, drivetrain_motor_controller);
-// auto BackRightMotor = sylib::Motor(5, 600, false, drivetrain_motor_controller);
-// auto MiddleRightMotor =  sylib::Motor(6, 600, true, drivetrain_motor_controller);
+sylib::Motor BackLeftMotor(2, 600, true, drivetrain_motor_controller);
+sylib::Motor MiddleLeftMotor(3, 600, false, drivetrain_motor_controller);
+sylib::Motor FrontRightMotor(4, 600, false, drivetrain_motor_controller);
+sylib::Motor BackRightMotor(5, 600, false, drivetrain_motor_controller);
+sylib::Motor MiddleRightMotor(6, 600, true, drivetrain_motor_controller);
