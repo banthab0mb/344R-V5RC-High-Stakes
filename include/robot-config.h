@@ -6,11 +6,11 @@
 
 extern vex::controller Controller1;
 
-sylib::Motor FrontLeftMotor;
-// extern auto FrontRightMotor;
-// extern auto BackLeftMotor;
-// extern auto BackRightMotor;
-// extern auto MiddleLeftMotor;
-// extern auto MiddleRightMotor;
+extern sylib::Motor FrontLeftMotor;
+extern sylib::Motor FrontRightMotor;
+extern sylib::Motor BackLeftMotor;
+extern sylib::Motor BackRightMotor;
+extern sylib::Motor MiddleLeftMotor;
+extern sylib::Motor MiddleRightMotor;
 
 #endif

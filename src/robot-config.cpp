@@ -1,7 +1,6 @@
 #include "vex.h"
 #include "auton.h"
 #include "sylib/sylib.hpp"
-#include "motor.hpp"
 #include "robot-config.h"
 #include "sylib/motor.hpp"
 

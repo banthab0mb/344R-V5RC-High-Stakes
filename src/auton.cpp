@@ -1,6 +1,7 @@
 #include "vex.h"
 #include "auton.h"
 #include "sylib/sylib.hpp"
+#include "robot-config.h"
 
 using namespace vex;
 
