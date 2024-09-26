@@ -8,6 +8,9 @@ using namespace vex;
 void preAuton(){
     // All activities that occur before the start of the autonomous phase should be placed here.
 
+  // Brain screen logo
+   Brain.Screen.drawImageFromFile("brainbanner.png", 100, 100);
+
   // Create an addrled object
   auto addrled = sylib::Addrled(1, 1, 64);
 

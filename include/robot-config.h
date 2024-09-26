@@ -6,6 +6,8 @@
 
 extern vex::controller Controller1;
 
+extern vex::brain Brain;
+
 extern sylib::Motor FrontLeftMotor;
 extern sylib::Motor FrontRightMotor;
 extern sylib::Motor BackLeftMotor;

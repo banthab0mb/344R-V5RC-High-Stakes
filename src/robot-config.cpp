@@ -31,3 +31,5 @@ sylib::Motor MiddleLeftMotor(3, 600, false, drivetrain_motor_controller);
 sylib::Motor FrontRightMotor(4, 600, false, drivetrain_motor_controller);
 sylib::Motor BackRightMotor(5, 600, false, drivetrain_motor_controller);
 sylib::Motor MiddleRightMotor(6, 600, true, drivetrain_motor_controller);
+
+brain Brain;
