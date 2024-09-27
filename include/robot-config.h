@@ -4,9 +4,11 @@
 #include "vex.h"
 #include "sylib/motor.hpp"
 
-extern vex::controller Controller1;
+using namespace vex;
 
-extern vex::brain Brain;
+extern controller Controller1;
+
+extern brain Brain;
 
 extern sylib::Motor FrontLeftMotor;
 extern sylib::Motor FrontRightMotor;
