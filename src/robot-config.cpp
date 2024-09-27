@@ -9,27 +9,11 @@ using namespace vex;
 // // Driver's controller initalization
 controller Controller1 = controller(primary);
 
-// // Motor controller for the drivetrain
-sylib::SpeedControllerInfo drivetrain_motor_controller(
-    [](double rpm)
-    { return 5; }, // kV function
-    1,             // kP
-    1,             // kI
-    1,             // kD
-    1,             // kH
-    true,         // anti-windup enabled
-    0,             // anti-windup range
-    false,         // p controller bounds threshold enabled
-    0,             // p controller bounds cutoff enabled
-    1,             // kP2 for when over threshold
-    0              // range to target to apply max voltage
-);
-
-sylib::Motor FrontLeftMotor(1, 600, true, drivetrain_motor_controller);
-sylib::Motor BackLeftMotor(2, 600, true, drivetrain_motor_controller);
-sylib::Motor MiddleLeftMotor(3, 600, false, drivetrain_motor_controller);
-sylib::Motor FrontRightMotor(4, 600, false, drivetrain_motor_controller);
-sylib::Motor BackRightMotor(5, 600, false, drivetrain_motor_controller);
-sylib::Motor MiddleRightMotor(6, 600, true, drivetrain_motor_controller);
+motor FrontLeftMotor(PORT1, gearSetting::ratio6_1, true);
+motor BackLeftMotor(PORT2, gearSetting::ratio6_1, true);
+motor MiddleLeftMotor(PORT3, gearSetting::ratio6_1, true);
+motor FrontRightMotor(PORT4, gearSetting::ratio6_1, false);
+motor BackRightMotor(PORT5, gearSetting::ratio6_1, false);
+motor MiddleRightMotor(PORT6, gearSetting::ratio6_1, false);
 
 brain Brain;

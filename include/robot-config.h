@@ -10,11 +10,11 @@ extern controller Controller1;
 
 extern brain Brain;
 
-extern sylib::Motor FrontLeftMotor;
-extern sylib::Motor FrontRightMotor;
-extern sylib::Motor BackLeftMotor;
-extern sylib::Motor BackRightMotor;
-extern sylib::Motor MiddleLeftMotor;
-extern sylib::Motor MiddleRightMotor;
+extern motor FrontLeftMotor;
+extern motor FrontRightMotor;
+extern motor BackLeftMotor;
+extern motor BackRightMotor;
+extern motor MiddleLeftMotor;
+extern motor MiddleRightMotor;
 
 #endif

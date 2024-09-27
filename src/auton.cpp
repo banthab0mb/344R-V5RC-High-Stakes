@@ -10,12 +10,12 @@ void auton()
 {
 // Set the motors to spin at 150 RPM for 5 seconds using the 
 // custom speed controller
-  FrontLeftMotor.set_velocity_custom_controller(150); 
-  BackLeftMotor.set_velocity_custom_controller(150);
-  MiddleLeftMotor.set_velocity_custom_controller(150);
-  FrontRightMotor.set_velocity_custom_controller(150);
-  BackRightMotor.set_velocity_custom_controller(150);
-  MiddleRightMotor.set_velocity_custom_controller(150);
+  FrontLeftMotor.setVelocity(150, rpm); 
+  BackLeftMotor.setVelocity(150, rpm);
+  MiddleLeftMotor.setVelocity(150, rpm);
+  FrontRightMotor.setVelocity(150, rpm);
+  BackRightMotor.setVelocity(150, rpm);
+  MiddleRightMotor.setVelocity(150, rpm);
   sylib::delay(5000);
   FrontLeftMotor.stop();
   BackLeftMotor.stop();
