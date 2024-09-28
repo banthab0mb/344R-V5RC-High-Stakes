@@ -19,8 +19,8 @@ using namespace vex;
 /*
 TODO:
 Auton Selctor?
-Driver control file
-Test driving
+Driver control file - DONE
+Test driving - DONE
 Create auton
 Get LEDS and set them up
 */
