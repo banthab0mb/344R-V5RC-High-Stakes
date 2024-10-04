@@ -12,7 +12,7 @@ Button autonButtons[] = {
   Button(10, 10, 150, 50, "Left MOGO", green, black),
   Button(170, 10, 150, 50, "Left WALL", white, black),
   Button(10, 70, 150, 50, "Right MOGO", white, black),
-  Button(170, 70, 150, 50, "Right STAKE", white, black)
+  Button(170, 70, 150, 50, "Right WALL", white, black)
 };
 
 
