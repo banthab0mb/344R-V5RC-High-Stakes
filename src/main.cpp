@@ -16,12 +16,15 @@
 
 using namespace vex;
 
+// auton selector variable
+int autonToRun = 0;
+
 /*
 TODO:
-Auton Selctor?
+Auton Selctor - DONE
 Driver control file - DONE
 Test driving - DONE
-Create auton
+Create auton(s)
 Get LEDS and set them up
 */
 
@@ -29,11 +32,8 @@ Get LEDS and set them up
 // A global instance of competition
 competition Competition;
 
-// define your global instances of motors and other devices here
 
-/*---------------------------------------------------------------------------*/
-/*                          Pre-Autonomous Function                          */
-/*---------------------------------------------------------------------------*/
+// Pre-Autonomous Function
 
 void pre_auton(void)
 {
@@ -45,20 +45,17 @@ void pre_auton(void)
 
 }
 
-/*---------------------------------------------------------------------------*/
-/*                              Autonomous Task                              */
-/*---------------------------------------------------------------------------*/
+// Autonomous Task
 
 void autonomous(void)
 {
   auton();
 }
 
-/*---------------------------------------------------------------------------*/
-/*                              User Control Task                            */
-/*---------------------------------------------------------------------------*/
+// User Control Task
 
-void usercontrol(void)
+
+void userControl(void)
 {
   sylib::delay(2000); // Wait for 2 seconds before starting the drivetrain motors
   // usercontrol function is called:
@@ -70,16 +67,29 @@ void usercontrol(void)
 //
 int main()
 {
-  // Set up callbacks for autonomous and driver control periods.
+  competition Competition;
+
   Competition.autonomous(autonomous);
-  Competition.drivercontrol(usercontrol);
+  Competition.drivercontrol(userControl);
 
-  // Run the pre-autonomous function.
-  pre_auton();
-
-  // Prevent main from exiting with an infinite loop.
-  while (true)
+  while(true)
   {
-    wait(100, msec);
+    if(!Competition.isEnabled())
+    {
+      Brain.Screen.clearScreen(white);
+      for(int i = 0; i < 4; i++)
+      {
+        autonButtons[i].render();
+        if(autonButtons[i].isClicked())
+        {
+          autonButtons[autonToRun].buttonColor = white;
+          autonButtons[i].buttonColor = green;
+          autonToRun = i;
+        }
+      }
+    }
+
+    Brain.Screen.render();
+    vex::task::sleep(7);
   }
 }
