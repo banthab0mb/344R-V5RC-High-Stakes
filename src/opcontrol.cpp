@@ -7,6 +7,8 @@ using namespace vex;
 
 void opControl(){
 
+  Brain.Screen.drawImageFromFile("brainbanner.png", 0, 0);
+
   // User control code here, inside the loop
   while (1)
   { 
@@ -17,7 +19,7 @@ void opControl(){
         BackLeftMotor.setVelocity((0.0001 * (((Controller1.Axis3.position() + Controller1.Axis1.position()) * (Controller1.Axis3.position() + Controller1.Axis1.position())) * (Controller1.Axis3.position() + Controller1.Axis1.position()))), percent);
         FrontRightMotor.setVelocity((0.0001 * (((Controller1.Axis3.position() - Controller1.Axis1.position()) * (Controller1.Axis3.position() - Controller1.Axis1.position())) * (Controller1.Axis3.position() - Controller1.Axis1.position()))), percent);
         BackRightMotor.setVelocity((0.0001 * (((Controller1.Axis3.position() - Controller1.Axis1.position()) * (Controller1.Axis3.position() - Controller1.Axis1.position())) * (Controller1.Axis3.position() - Controller1.Axis1.position()))), percent);
-        MiddleLeftMotor.setVelocity((0.0001 * (((Controller1.Axis3.position() + Controller1.Axis1.position()) * (Controller1.Axis3.position() - Controller1.Axis1.position())) * (Controller1.Axis3.position() + Controller1.Axis1.position()))), percent);
+        MiddleLeftMotor.setVelocity((0.0001 * (((Controller1.Axis3.position() - Controller1.Axis1.position()) * (Controller1.Axis3.position() - Controller1.Axis1.position())) * (Controller1.Axis3.position() + Controller1.Axis1.position()))), percent);
         MiddleRightMotor.setVelocity((0.0001 * (((Controller1.Axis3.position() - Controller1.Axis1.position()) * (Controller1.Axis3.position() - Controller1.Axis1.position())) * (Controller1.Axis3.position() - Controller1.Axis1.position()))), percent);
         // Spins motor according to the velocity set
         FrontLeftMotor.spin(forward);
