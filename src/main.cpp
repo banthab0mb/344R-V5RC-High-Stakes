@@ -57,7 +57,6 @@ void autonomous(void)
 
 void userControl(void)
 {
-  sylib::delay(2000); // Wait for 2 seconds before starting the drivetrain motors
   // usercontrol function is called:
   opControl();
 }

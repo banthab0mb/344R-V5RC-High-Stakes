@@ -74,36 +74,78 @@ void speed(double inputRPM) {
   MiddleRightMotor.setVelocity(inputRPM, rpm);
 }
 
+void intakeBoth(double inputSeconds) {
+  intake.spin(forward);
+  conveyor.spin(forward);
+  sylib::delay(inputSeconds * 1000);
+  intake.stop();
+  conveyor.stop();
+}
+
 // Auton code
 
 void auton()
 {
-  if(autonToRun == 0) // Red mogo
+  if(autonToRun == 0) // Blue mogo
     {
       Brain.Screen.clearScreen();
       Brain.Screen.drawImageFromFile("brainbanner.png", 0, 0);
       
-    speed(500);
-    driveForward(18);
-    
+      speed(500);
+      driveReverse(18);
+      clamp.set(true);
+      conveyor.spin(forward, 200, rpm);
+      sylib::delay(2000);
+      turnLeft(90);
+      driveForward(20);
+      intakeBoth(6);
+      turnLeft(90);
+      intakeBoth(5);
+      clamp.set(false);
 
     }
 
-    if(autonToRun == 1) // Red wall
+    if(autonToRun == 1) // Blue wall
     {
       Brain.Screen.clearScreen();
       Brain.Screen.drawImageFromFile("brainbanner.png", 0, 0);
+      
+      speed(500);
+      driveReverse(12);
+      turnRight(90);
+      driveReverse(12);
+      intakeBoth(5);
+    }
+
+    if(autonToRun == 2) // Red mogo
+    {
+      Brain.Screen.clearScreen();
+      Brain.Screen.drawImageFromFile("brainbanner.png", 0, 0);
+      
+      speed(500);
+      driveReverse(18);
+      clamp.set(true);
+      conveyor.spin(forward, 200, rpm);
+      sylib::delay(2000);
+      turnRight(90);
+      driveForward(20);
+      intakeBoth(6);
+      turnRight(90);
+      intakeBoth(5);
+      clamp.set(false);
 
     }
 
-    if(autonToRun == 2) // Blue mogo
+    if(autonToRun == 3) // Red wall
     {
-      Brain.Screen.print("3");
-    }
-
-    if(autonToRun == 3) // Blue wall
-    {
-      Brain.Screen.print("4");
+      Brain.Screen.clearScreen();
+      Brain.Screen.drawImageFromFile("brainbanner.png", 0, 0);
+      
+      speed(500);
+      driveReverse(12);
+      turnLeft(90);
+      driveReverse(12);
+      intakeBoth(5);
     }
 
 }

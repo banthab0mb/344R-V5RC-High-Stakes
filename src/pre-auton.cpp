@@ -9,10 +9,10 @@ using namespace vex;
 
 // configures buttons
 Button autonButtons[] = {
-  Button(10, 10, 150, 50, "Red MOGO", green, black),
-  Button(170, 10, 150, 50, "Red WALL", white, black),
-  Button(10, 70, 150, 50, "Blue MOGO", white, black),
-  Button(170, 70, 150, 50, "Blue WALL", white, black)
+  Button(10, 10, 150, 50, "Blue MOGO", green, black),
+  Button(170, 10, 150, 50, "Blue WALL", white, black),
+  Button(10, 70, 150, 50, "Red MOGO", white, black),
+  Button(170, 70, 150, 50, "Red WALL", white, black)
 };
 
 

@@ -4,8 +4,10 @@ void auton();
 
 // Auton driving functions
 void driveForward();
-void driveBackward();
+void driveReverse();
 void turnLeft();
 void turnRight();
 
 void speed();
+
+void intakeBoth();
