@@ -17,6 +17,10 @@ extern motor BackRightMotor;
 extern motor MiddleLeftMotor;
 extern motor MiddleRightMotor;
 
+extern motor intake;
+extern motor conveyor;
+
 extern digital_out clamp;
+
 
 #endif

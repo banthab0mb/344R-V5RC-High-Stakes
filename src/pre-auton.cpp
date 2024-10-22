@@ -9,10 +9,10 @@ using namespace vex;
 
 // configures buttons
 Button autonButtons[] = {
-  Button(10, 10, 150, 50, "Left MOGO", green, black),
-  Button(170, 10, 150, 50, "Left WALL", white, black),
-  Button(10, 70, 150, 50, "Right MOGO", white, black),
-  Button(170, 70, 150, 50, "Right WALL", white, black)
+  Button(10, 10, 150, 50, "Red MOGO", green, black),
+  Button(170, 10, 150, 50, "Red WALL", white, black),
+  Button(10, 70, 150, 50, "Blue MOGO", white, black),
+  Button(170, 70, 150, 50, "Blue WALL", white, black)
 };
 
 
@@ -28,5 +28,12 @@ void preAuton(){
 
   // Cycle the colors at speed 10
   underGlow.cycle(*underGlow, 10);
+
+  while(true) {
+    Controller1.Screen.print(intake.temperature(fahrenheit));
+    Controller1.Screen.newLine();
+    Controller1.Screen.print(conveyor.temperature(fahrenheit));
+    Controller1.Screen.newLine();
+  }
 
 }

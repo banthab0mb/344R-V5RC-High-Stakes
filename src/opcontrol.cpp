@@ -16,6 +16,19 @@ bool l1PressState;
   }
 
 }
+
+void intakeControl() {
+  if (Controller1.ButtonR1.pressing()) {
+  intake.spin(forward, 100, percent);
+  }
+}
+
+void conveyorControl() {
+  if (Controller1.ButtonR2.pressing()) {
+  conveyor.spin(forward, 100, percent);
+  }
+}
+
 void opControl(){
 
   Brain.Screen.drawImageFromFile("brainbanner.png", 0, 0);
@@ -23,7 +36,11 @@ void opControl(){
   // Mogo clamp controller toggle
   Controller1.ButtonL1.pressed(l1Press);
 
-  // User control code here, inside the loop
+  // Intake and conveyor control
+  intakeControl();
+  conveyorControl();
+
+  // Driving code inside while loop
   while (1)
   { 
         // x₁ = Left Motor X = [Controller] [3] position + [Controller] [1] position
