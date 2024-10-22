@@ -17,4 +17,6 @@ extern motor BackRightMotor;
 extern motor MiddleLeftMotor;
 extern motor MiddleRightMotor;
 
+extern digital_out clamp;
+
 #endif

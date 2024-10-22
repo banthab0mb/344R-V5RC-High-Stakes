@@ -16,4 +16,6 @@ motor FrontRightMotor(PORT4, gearSetting::ratio6_1, false);
 motor BackRightMotor(PORT5, gearSetting::ratio6_1, false);
 motor MiddleRightMotor(PORT6, gearSetting::ratio6_1, false);
 
+digital_out clamp = digital_out(Brain.ThreeWirePort.B);
+
 brain Brain;

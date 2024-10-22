@@ -5,9 +5,23 @@
 
 using namespace vex;
 
+// Mogo clamp code
+bool l1PressState;
+  void l1Press() {
+  l1PressState = !l1PressState;
+  if (l1PressState) {
+    clamp.set(true);
+  } else {
+    clamp.set(false);
+  }
+
+}
 void opControl(){
 
   Brain.Screen.drawImageFromFile("brainbanner.png", 0, 0);
+
+  // Mogo clamp controller toggle
+  Controller1.ButtonL1.pressed(l1Press);
 
   // User control code here, inside the loop
   while (1)
