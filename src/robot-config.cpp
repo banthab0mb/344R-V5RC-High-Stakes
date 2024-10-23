@@ -6,6 +6,9 @@
 
 using namespace vex;
 
+brain Brain;
+
+
 // // Driver's controller initalization
 controller Controller1 = controller(primary);
 
@@ -21,4 +24,3 @@ motor conveyor(PORT8, gearSetting::ratio36_1, false);
 
 digital_out clamp = digital_out(Brain.ThreeWirePort.B);
 
-brain Brain;
