@@ -19,6 +19,7 @@ Button autonButtons[] = {
 void preAuton(){
   // All activities that occur before the start of the autonomous phase should be placed here.
 
+  clamp.set(false);
   // Create an addrled object
   auto underGlow = sylib::Addrled(22, 1, 64);
 

@@ -3,4 +3,5 @@
 void opControl();
 
 void l1Press();
-void intakeControl();
+
+extern bool l1PressState;
