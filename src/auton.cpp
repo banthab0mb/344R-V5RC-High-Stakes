@@ -90,7 +90,7 @@ void auton()
     {
       Brain.Screen.clearScreen();
       Brain.Screen.drawImageFromFile("brainbanner.png", 0, 0);
-      
+
       speed(500);
       driveReverse(18);
       clamp.set(true);
@@ -121,7 +121,7 @@ void auton()
     {
       Brain.Screen.clearScreen();
       Brain.Screen.drawImageFromFile("brainbanner.png", 0, 0);
-      
+
       speed(500);
       driveReverse(18);
       clamp.set(true);
@@ -140,12 +140,12 @@ void auton()
     {
       Brain.Screen.clearScreen();
       Brain.Screen.drawImageFromFile("brainbanner.png", 0, 0);
-      
+
       speed(500);
       driveReverse(12);
       turnLeft(90);
       driveReverse(12);
       intakeBoth(5);
     }
-
 }
+
