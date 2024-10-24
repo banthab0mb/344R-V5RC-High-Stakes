@@ -25,20 +25,26 @@ void opControl(){
   Controller1.ButtonL1.pressed(l1Press);
 
 
-  // Driving code inside while loop
+  // Driver control code inside while loop
   while (1)
   { 
-    if (Controller1.ButtonR2.pressing()) {
-  conveyor.spin(forward, 100, percent);
-  } else {
-    conveyor.stop(coast);
-  }
+        // Intake control code
+        if (Controller1.ButtonR1.pressing()) {
+          conveyor.spin(forward, 100, percent);
+          intake.spin(forward, 100, percent);
+        } else {
+          conveyor.stop(coast);
+          intake.stop(coast);
+        }
 
-  if (Controller1.ButtonR1.pressing()) {
-  intake.spin(forward, 100, percent);
-  } else {
-    intake.stop(coast);
-  }
+        if (Controller1.ButtonR2.pressing()) {
+          intake.spin(reverse, 100, percent);
+          conveyor.spin(reverse, 100, percent);
+        } else {
+          intake.stop(coast);
+          conveyor.stop(coast);
+        }
+
         // x₁ = Left Motor X = [Controller] [3] position + [Controller] [1] position
         // x₂ = Right Motor X = [Controller] [3] position - [Controller] [1] position
         // Sets each motor's velocity (in rpm) to 0.0001x³ (shown as 0.0001 * x * x * x)
